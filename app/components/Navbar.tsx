@@ -37,20 +37,20 @@ export default function Navbar() {
               alt="logo"
               width={100}
               height={100}
-              className="h-5 w-auto hover:animate-spin"
+              className="h-5 w-auto animate-spin-slow hover:animate-spin"
             />
           </Link>
         </div>
 
         <div className="flex items-center gap-4">
-          <Navlink href="/pricing">Pricing</Navlink>
-          <Navlink href="/contact">Contact</Navlink>
+          <Navlink href="/pricing">Products</Navlink>
+          <Navlink href="/contact">About</Navlink>
           <Link
             className="font-bold hover:text-gray-500"
             href="https://cal.com/tanmai/30min"
             target="_blank"
           >
-            Book a call
+            Contact
           </Link>
         </div>
       </div>

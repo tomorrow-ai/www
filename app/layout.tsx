@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const abcFont = localFont({
+const primaryFont = localFont({
   src: "./fonts/ABCDiatypeVariable-Trial.ttf",
 });
 
@@ -16,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={abcFont.className}>
-      <body>{children}</body>
+    <html lang="en">
+      <body className={primaryFont.className}>{children}</body>
     </html>
   );
 }

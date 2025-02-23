@@ -19,32 +19,40 @@ function Navlink({
 
 export default function Navbar() {
   return (
-    <nav className="flex items-center justify-between h-10 py-4 border-b">
-      <div className="flex items-center gap-4">
-        <Link href="/" className="">
-          <Image
-            src="/logo-rem.png"
-            alt="logo"
-            width={100}
-            height={100}
-            className="h-5 w-auto"
-          />
-        </Link>
-        <Navlink href="/">World</Navlink>
-        <Navlink href="/">U.S.</Navlink>
-        <Navlink href="/">Politics</Navlink>
-        <Navlink href="/">Business</Navlink>
-        <Navlink href="/">Tech</Navlink>
-        <Navlink href="/">Sports</Navlink>
-      </div>
-      <div className="flex items-center gap-4">
-        <Link
-          className="font-bold px-4 py-2 hover:text-gray-500"
-          href="https://cal.com/tanmai/30min"
-          target="_blank"
-        >
-          <p>Book a call</p>
-        </Link>
+    <nav className="w-full">
+      <div className="flex items-center justify-between h-10 py-4 px-4">
+        <div className="flex items-center gap-4">
+          <Navlink href="/">World</Navlink>
+          <Navlink href="/">U.S.</Navlink>
+          <Navlink href="/">Politics</Navlink>
+          <Navlink href="/">Tech</Navlink>
+          <Navlink href="/">Sports</Navlink>
+        </div>
+
+        {/* weird styling to absolutely center*/}
+        <div className="absolute left-1/2 transform -translate-x-1/2">
+          <Link href="/" className="">
+            <Image
+              src="/logo-rem.png"
+              alt="logo"
+              width={100}
+              height={100}
+              className="h-5 w-auto hover:animate-spin"
+            />
+          </Link>
+        </div>
+
+        <div className="flex items-center gap-4">
+          <Navlink href="/pricing">Pricing</Navlink>
+          <Navlink href="/contact">Contact</Navlink>
+          <Link
+            className="font-bold hover:text-gray-500"
+            href="https://cal.com/tanmai/30min"
+            target="_blank"
+          >
+            Book a call
+          </Link>
+        </div>
       </div>
     </nav>
   );

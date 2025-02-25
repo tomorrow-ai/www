@@ -1,11 +1,54 @@
-import Navbar from "./components/navbar";
+import React from "react";
+
+// Import components
+import Masthead from "./components/Masthead";
+import MainArticle from "./components/MainArticle";
+import Headlines from "./components/Headlines";
+import SmallArticle from "./components/SmallArticle";
+import TopStories from "./components/TopStories";
+import FeatureStories from "./components/FeatureStories";
+import Subscription from "./components/Subscription";
+
 export default function Home() {
+  const currentDate = new Date().toLocaleDateString("en-US", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   return (
-    <div className="flex flex-col min-h-screen">
-      <Navbar />
-      <div className="flex justify-center flex-1">
-        <div className="w-full max-w-4xl px-4"></div>
+    <main className="min-h-screen">
+      {/* Newspaper Masthead */}
+      <Masthead currentDate={currentDate} />
+
+      {/* Main Headline Section */}
+      <section className="newspaper-section py-8">
+        <div className="newspaper-container">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            {/* Main Article */}
+            <MainArticle />
+
+            {/* Small Article */}
+            <SmallArticle />
+
+            {/* Sidebar Headlines */}
+            <Headlines />
+          </div>
+        </div>
+      </section>
+
+      {/* Articles Grid Section - Combined Top Stories and Feature Stories */}
+      <div className="bg-[var(--body-color)] pt-2 pb-8">
+        {/* Top Stories */}
+        <TopStories />
+
+        {/* Feature Stories */}
+        <FeatureStories />
       </div>
-    </div>
+
+      {/* Subscribe Section */}
+      <Subscription />
+    </main>
   );
 }

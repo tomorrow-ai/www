@@ -2,9 +2,8 @@ import React from "react";
 
 // Import components
 import Masthead from "./components/Masthead";
-import MainArticle from "./components/MainArticle";
+import MainArticleSection from "./components/MainArticleSection";
 import Headlines from "./components/Headlines";
-import SmallArticle from "./components/SmallArticle";
 import TopStories from "./components/TopStories";
 import FeatureStories from "./components/FeatureStories";
 import Subscription from "./components/Subscription";
@@ -25,12 +24,9 @@ export default function Home() {
       {/* Main Headline Section */}
       <section className="newspaper-section py-8">
         <div className="newspaper-container">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-            {/* Main Article */}
-            <MainArticle />
-
-            {/* Small Article */}
-            <SmallArticle />
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            {/* Main Article Section */}
+            <MainArticleSection />
 
             {/* Sidebar Headlines */}
             <Headlines />

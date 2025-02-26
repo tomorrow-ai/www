@@ -4,80 +4,52 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --radius: 0.5rem;
-
-    /* Custom Colors */
-    --headline-color: 209 61% 16%;
-    --body-color: 0 0% 20%;
-    --accent-color: 209 61% 45%;
-    --muted-color: 0 0% 50%;
-    --border-color: 0 0% 85%;
-    --paper-color: 36 100% 99%;
+    --background: #ffffff;
+    --foreground: #1a1a1a;
+    --card: #f9fafb;
+    --card-foreground: #111827;
+    --primary: #0f172a;
+    --primary-foreground: #f8fafc;
+    --secondary: #f1f5f9;
+    --secondary-foreground: #0f172a;
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
+    --accent: #f1f5f9;
+    --accent-foreground: #0f172a;
+    --border: #e2e8f0;
+    --input: #e2e8f0;
+    --ring: #94a3b8;
   }
 
-  body {
-    background-color: white;
-    color: var(--body-color);
+  .dark {
+    --background: #121212;
+    --foreground: #e0e0e0;
+    --card: #1e1e1e;
+    --card-foreground: #e0e0e0;
+    --primary: #e0e0e0;
+    --primary-foreground: #121212;
+    --secondary: #2a2a2a;
+    --secondary-foreground: #d4d4d4;
+    --muted: #1e1e1e;
+    --muted-foreground: #a0a0a0;
+    --accent: #2a2a2a;
+    --accent-foreground: #d4d4d4;
+    --border: #3a3a3a;
+    --input: #3a3a3a;
+    --ring: #6b6b6b;
   }
 }
 
-@layer components {
-  .newspaper-container {
-    @apply max-w-screen-2xl mx-auto px-4 sm:px-6 md:px-8;
-  }
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-  .newspaper-headline {
-    @apply font-bold text-4xl md:text-5xl lg:text-6xl text-[var(--headline-color)] leading-tight tracking-tight;
-  }
+.dark ::selection {
+  background-color: rgba(255, 255, 255, 0.2);
+}
 
-  .newspaper-subheadline {
-    @apply font-medium text-xl md:text-2xl lg:text-3xl text-[var(--headline-color)] leading-snug;
-  }
-
-  .newspaper-byline {
-    @apply text-sm text-[var(--muted-color)] uppercase tracking-wider font-medium my-2;
-  }
-
-  .newspaper-lead {
-    @apply text-lg md:text-xl font-medium text-[var(--text-color)] leading-relaxed;
-  }
-
-  .newspaper-body {
-    @apply text-base md:text-lg text-[var(--text-color)] leading-relaxed;
-  }
-
-  .newspaper-caption {
-    @apply text-sm italic text-[var(--muted-color)];
-  }
-
-  .column-separator {
-    @apply border-r border-[var(--border-color)] h-full;
-  }
-
-  .newspaper-section {
-    @apply border-b border-[var(--border-color)] pb-[var(--section-spacing)] mb-[var(--section-spacing)];
-  }
-
-  .news-grid {
-    @apply grid gap-6 md:gap-8;
-  }
+::selection {
+  background-color: rgba(0, 0, 0, 0.1);
 }

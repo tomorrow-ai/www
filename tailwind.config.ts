@@ -6,36 +6,28 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        paper: "var(--paper-color)",
-        headline: "var(--headline-color)",
-        body: "var(--text-color)",
-        accent: "var(--accent-color)",
-        border: "var(--border-color)",
-        muted: "var(--muted-color)",
+        card: "var(--card)",
+        "card-foreground": "var(--card-foreground)",
+        primary: "var(--primary)",
+        "primary-foreground": "var(--primary-foreground)",
+        secondary: "var(--secondary)",
+        "secondary-foreground": "var(--secondary-foreground)",
+        muted: "var(--muted)",
+        "muted-foreground": "var(--muted-foreground)",
+        accent: "var(--accent)",
+        "accent-foreground": "var(--accent-foreground)",
+        border: "var(--border)",
+        input: "var(--input)",
+        ring: "var(--ring)",
       },
       animation: {
         "spin-slow": "spin 5s linear infinite",
-      },
-      fontFamily: {
-        headline: ["var(--font-primary)", "serif"],
-        body: ["var(--font-primary)", "sans-serif"],
-      },
-      typography: {
-        DEFAULT: {
-          css: {
-            'h1, h2, h3, h4': {
-              fontFamily: 'var(--font-primary)',
-            },
-          },
-        },
-      },
-      boxShadow: {
-        'newspaper': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
       },
     },
   },

@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ThemeProvider } from "./components/ThemeProvider";
 
 export const metadata: Metadata = {
-  title: "NewsAI - AI Tools for Modern Newsrooms",
-  description:
-    "Revolutionizing journalism with advanced AI tools designed specifically for newsrooms.",
+  title: "vecnews",
 };
 
 export default function RootLayout({
@@ -13,8 +12,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
